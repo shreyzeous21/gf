@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const MediaSlider = ({ videos = [], images = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,6 +35,13 @@ const MediaSlider = ({ videos = [], images = [] }) => {
           <div className="text-[2rem] absolute inset-0 flex items-center justify-center text-white font-bold lg:text-[5rem] bg-opacity-100 text-opacity-100 rounded-lg">
             {video.text} {/* Display the overlay text */}
           </div>
+          <Link href={video.url || "#"}>
+            {" "}
+            {/* Use a fallback URL, e.g., '#' */}
+            <div className="absolute bottom-2 right-2 text-xs lg:text-lg text-white font-bold bg-opacity-100 rounded-lg my-10 rotate-90 cursor-pointer">
+              View Work
+            </div>
+          </Link>
         </div>
       ))}
 

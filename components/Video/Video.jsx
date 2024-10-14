@@ -38,7 +38,7 @@ const MediaSlider = ({ videos = [], images = [] }) => {
           <Link href={video.url || "#"}>
             {" "}
             {/* Use a fallback URL, e.g., '#' */}
-            <div className="absolute bottom-2 right-2 text-xs lg:text-lg text-white font-bold bg-opacity-100 rounded-lg my-10 rotate-90 cursor-pointer">
+            <div className="absolute bottom-2 right-2 text-xs lg:text-xs text-white font-bold bg-opacity-100 rounded-lg my-10 rotate-90 cursor-pointer">
               View Work
             </div>
           </Link>

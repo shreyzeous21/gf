@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Acme } from "next/font/google";
+import { Afacad } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Loader from "@/components/Loader"; // Import the loader component
 import Image from "next/image";
 
-const font = Acme({ subsets: ["latin"], weight: ["400"] });
+const font = Afacad({ subsets: ["latin"], weight: ["400"] });
 
 export default function RootLayout({ children }) {
   const [isLoading, setIsLoading] = useState(true);

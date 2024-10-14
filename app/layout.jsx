@@ -1,23 +1,14 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import localFont from "next/font/local";
+import { Acme } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import Loader from "@/components/Loader"; // Import the loader component
 import Image from "next/image";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const font = Acme({ subsets: ["latin"], weight: ["400"] });
 
 export default function RootLayout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,7 +38,7 @@ export default function RootLayout({ children }) {
         <title>Green Factor</title>
         <link rel="shortcut icon" href="/Gf-logo.png" type="image/x-icon" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body c className={font.className}>
         {isLoading ? (
           <Loader /> // Display loader while isLoading is true
         ) : (

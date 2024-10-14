@@ -19,7 +19,7 @@ const MediaSlider = ({ videos = [], images = [] }) => {
       {videos.map((video, index) => (
         <div
           key={`video-${index}`}
-          className="flex-shrink-0 w-full sm:w-[80%] md:w-[65%] h-auto mb-3 p-4" // Full width on phones, 80% on small screens, 60% on medium and larger
+          className="relative flex-shrink-0 w-full sm:w-[80%] md:w-[65%] h-auto mb-3 p-4"
         >
           <video
             className="w-full h-auto object-cover rounded-lg"
@@ -30,6 +30,10 @@ const MediaSlider = ({ videos = [], images = [] }) => {
             <source src={video.src} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          {/* Overlay Text */}
+          <div className="text-[2rem] absolute inset-0 flex items-center justify-center text-white font-bold lg:text-[5rem] bg-opacity-100 text-opacity-100 rounded-lg">
+            {video.text} {/* Display the overlay text */}
+          </div>
         </div>
       ))}
 

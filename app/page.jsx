@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef, useState } from "react";
 import Video from "@/components/Video/Video";
 import Service from "@/components/Service/Service";
 import Image from "next/image";
@@ -12,6 +12,9 @@ const videos = [
   { id: 2, src: "/video2.mp4" },
   { id: 3, src: "/video3.mp4" },
   { id: 4, src: "/video4.mp4" },
+  { id: 5, src: "/video4.mp4" },
+  { id: 6, src: "/video4.mp4" },
+  { id: 7, src: "/video4.mp4" },
 ];
 const images = [
   { id: 1, src: "/brand1.jpg" },
@@ -20,26 +23,22 @@ const images = [
 ];
 
 const Home = () => {
+  const bottomRef = useRef(null);
+
+  // Function to scroll to the bottom section
+  const scrollToBottom = () => {
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="bg-gray-100 h-full w-full flex relative">
       <div className="flex-1 overflow-y-scroll scroll-hidden">
         {/* <Text /> */}
-        <Video videos={videos} />
-        <Slider images={images} />
-        <Video videos={videos} />
+        <Video videos={videos} images={images} />
+        {/* <Slider images={images} /> */}
+        {/* <Video videos={videos} /> */}
         {/* <Service /> */}
-      </div>
-      <div className="hidden md:flex flex-col items-center justify-center fixed right-4 top-1/2 transform -translate-y-1/2">
-        <h2 className="text-xs text-gray-500 font-semibold transform rotate-90">
-          Scroll Down{" "}
-          <Image
-            src={"/slide.svg"}
-            width={30}
-            height={10}
-            alt="slide"
-            className="text-gray-500"
-          />
-        </h2>
       </div>
     </div>
   );

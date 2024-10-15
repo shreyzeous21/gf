@@ -30,10 +30,10 @@ export default function RootLayout({ children }) {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setShowScrollUp(false); // Show Scroll Down after scrolling up
-  };
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  //   setShowScrollUp(false); // Show Scroll Down after scrolling up
+  // };
 
   return (
     <html
@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
             {/* Scroll Button Container */}
             <div className="hidden md:flex fixed right-4 top-1/2 transform -translate-y-1/2 cursor-pointer">
               {/* Scroll Down Button */}
-              {!showScrollUp && (
+              {/* {!showScrollUp && ( */}
                 <div
                   className="flex flex-col items-center"
                   onClick={scrollToBottom}
@@ -76,10 +76,10 @@ export default function RootLayout({ children }) {
                     className="rotate-90 mx-5 animate-pulse"
                   />
                 </div>
-              )}
+              {/* // )} */}
 
               {/* Scroll Up Button */}
-              {showScrollUp && (
+              {/* {showScrollUp && (
                 <div
                   className="flex flex-col items-center"
                   onClick={scrollToTop}
@@ -96,7 +96,7 @@ export default function RootLayout({ children }) {
                     className="-rotate-90 mx-5 animate-pulse"
                   />
                 </div>
-              )}
+              )} */}
             </div>
           </>
         )}

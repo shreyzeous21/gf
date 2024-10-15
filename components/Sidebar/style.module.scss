@@ -15,8 +15,10 @@
         cursor: pointer;
         display: flex;
         align-items: center;
+        &::after,&::before{
+            background-color: inherit;
+        }
 
-        
 }
 
 
@@ -32,6 +34,7 @@
             background-color: black;
             position: relative;
             transition: transform 0.3s;
+            
         }
 
         &::after{
@@ -49,13 +52,13 @@
         &::after{
             transform: rotate(45deg);
             top: -1px;
-            background-color: white;
+            background-color: black;
         }
 
         &::before{
             transform: rotate(-45deg);
             top: 0px;
-            background-color: white;
+            background-color: black;
         }
         
     }

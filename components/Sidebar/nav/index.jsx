@@ -73,7 +73,7 @@ export default function HomeNav() {
         </span>
         <span className="text-lg mb-96 gap-2">
           Design & Developed by{" "}
-          <a href="/" className="hover:underline text-green-500 ">
+          <a href="https://www.coderxpoint.com/" className="hover:underline text-green-500 ">
             CoderXpoint
           </a>
         </span>

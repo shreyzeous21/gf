@@ -73,7 +73,7 @@ const Footer = () => {
         </span>
         <span className="text-xs text-gray-400 gap-2">
           Designed & Developed by{" "}
-          <Link href="/" className="hover:underline text-green-500 ">
+          <Link href="https://www.coderxpoint.com/" className="hover:underline text-green-500 ">
             CoderXpoint
           </Link>
         </span>

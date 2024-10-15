@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className="scrollbar-custom scroll-smooth overflow-y-scroll h-64"
+      className="scrollbar-custom scroll-smooth overflow-y-scroll h-64 bg-gray-100"
     >
       <head>
         <title>Green Factor</title>

@@ -21,7 +21,7 @@ export default function Home() {
             onClick={() => {
               setIsActive(!isActive);
             }}
-            className={styles.button}
+            className={`md:mx-80 ${styles.button}`}
           >
             <div
               className={` ${styles.burger} ${

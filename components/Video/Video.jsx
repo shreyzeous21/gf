@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const MediaSlider = ({ videos = [], images = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,9 +39,21 @@ const MediaSlider = ({ videos = [], images = [] }) => {
           <Link href={video.url || "#"}>
             {" "}
             {/* Use a fallback URL, e.g., '#' */}
-            <div className="absolute bottom-2 right-2 text-xs lg:text-lg text-white font-bold bg-opacity-100 rounded-lg my-10 rotate-90 cursor-pointer">
-              View Work
-            </div>
+            <motion.div
+              className="absolute md:bottom-8 bottom-5 right-2 text-xs lg:text-lg text-white font-bold bg-opacity-100 rounded-full cursor-pointer p-4 "
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.2, 1], y: [0, -10, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+            >
+              <div className="flex items-center justify-center">
+                <span className="transform rotate-90">View Work</span>
+              </div>
+            </motion.div>
           </Link>
         </div>
       ))}

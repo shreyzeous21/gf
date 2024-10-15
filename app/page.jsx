@@ -8,7 +8,7 @@ import Slider from "@/components/Slider/Slider";
 
 // Sample array of video sources
 const videos = [
-  { id: 1, src: "/video.mp4" }, // Replace with actual video sources
+  // { id: 1, src: "/video.mp4" }, // Replace with actual video sources
   { id: 2, src: "/video2.mp4", text: "#Nanobiddingwar", url: "/about" },
   { id: 3, src: "/video3.mp4", text: "Power To Choose" },
   { id: 4, src: "/video4.mp4", text: "No One Left Behind" },

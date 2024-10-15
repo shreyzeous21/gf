@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useRouter } from "next/navigation";
@@ -7,12 +8,46 @@ import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
+  function FramerHeadline() {
+    const TextVariants = {
+      initial: { opacity: 0, rotateX: -90 },
+      animate: { opacity: 1, rotateX: 0 },
+      exit: { opacity: 0, rotateX: 90 },
+    };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    const texts = ["Factor", "CoderXpoint"];
+    const [currentWord, setCurrentWord] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentWord((prevIndex) => (prevIndex + 1) % texts.length);
+      }, 3000); // 3-second interval for switching
+
+      return () => clearInterval(interval);
+    }, []);
+
+    return (
+      <motion.span className="flex">
+        <AnimatePresence mode="wait" initial={false}>
+          {texts.map((word, index) =>
+            index === currentWord ? (
+              <motion.span
+                key={word}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={TextVariants}
+                transition={{ duration: 0.8 }}
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            ) : null
+          )}
+        </AnimatePresence>
+      </motion.span>
+    );
+  }
 
   const menuItems = [
     { name: "About", path: "/" },
@@ -26,12 +61,26 @@ const Header = () => {
     <header className="bg-gray-100 sticky top-0 z-10">
       <div className="container mx-auto max-w-4xl flex justify-between items-center p-2">
         {/* Logo */}
-        <p className="text-2xl md:mx-4 mx-4 gap-2 flex font-bold text-gray-400">
-          Green <span className="text-black">Factor</span>
-        </p>
-        <div className="text-green-500 text-2xl font-bold mx-20">
+        <motion.p className="md:text-2xl text-lg md:mx-4 mx-4 gap-1 font-bold flex text-gray-400">
+          <motion.span
+            initial={{ rotateY: 0 }}
+            whileHover={{ rotateY: 180 }}
+            transition={{ duration: 0.6 }}
+          >
+            Green
+          </motion.span>{" "}
+          <motion.span
+            className="text-black"
+            initial={{ rotateY: 0 }}
+            whileHover={{ rotateY: 180 }}
+            transition={{ duration: 0.6 }}
+          >
+            <FramerHeadline />{" "}
+          </motion.span>
+        </motion.p>
+        <div className="text-green-500 relative md:mx-20">
           <div className=" ">
-            <Image src={"/GF-logo.png"} width={100} height={50} alt="logo" />
+            <Image className="logo" src={"/GF-logo.png"} width={100} height={50} alt="logo" />
             <div>
               <Sidebar />
             </div>

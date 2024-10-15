@@ -26,7 +26,7 @@ const Header = () => {
     <header className="bg-gray-100 sticky top-0 z-10">
       <div className="container mx-auto max-w-4xl flex justify-between items-center p-2">
         {/* Logo */}
-        <p className="text-2xl mx-4 gap-2 flex font-bold text-gray-400">
+        <p className="text-2xl md:mx-4 mx-4 gap-2 flex font-bold text-gray-400">
           Green <span className="text-black">Factor</span>
         </p>
         <div className="text-green-500 text-2xl font-bold mx-20">

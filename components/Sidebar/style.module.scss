@@ -15,11 +15,13 @@
         cursor: pointer;
         display: flex;
         align-items: center;
-    
-       
-
-}
-
+        // margin: -1rem 1rem; // Default margin
+        
+        // Media query for phone screens
+        @media (max-width: 600px) {
+            margin: -11px 1rem; // Adjusted margin for phone screens
+        }
+    }
 
     .burger{
         width: 100%;

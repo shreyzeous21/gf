@@ -23,11 +23,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-white  sticky top-0 z-10">
+    <header className="bg-gray-100 sticky top-0 z-10">
       <div className="container mx-auto max-w-4xl flex justify-between items-center p-2">
         {/* Logo */}
-        <div className="text-green-500 text-2xl font-bold">
+        <p className="text-2xl font-bold text-gray-400">
+          Green <span className="text-black">Factor</span>
+        </p>
+        <div className="text-green-500 text-2xl font-bold mx-20">
           <Image src={"/GF-logo.png"} width={100} height={50} alt="logo" />
+          <Sidebar />
         </div>
 
         {/* Hamburger Menu */}
@@ -54,11 +58,9 @@ const Header = () => {
             </svg>
           </button>
         </motion.div> */}
-        <Sidebar />
       </div>
 
       {/* Fullscreen Menu Overlay */}
-
     </header>
   );
 };

@@ -4,13 +4,12 @@ import styles from "./style.module.scss";
 export default function index() {
   return (
     <>
-    <div className={styles.footer}>
-      <Link href={"/"}>Facebook</Link>
-      <Link href={"/"}>Instagram</Link>
-      <Link href={"/"}>Dribble</Link>
-      <Link href={"/"}>LinkedIn</Link>
-    </div>
-   
+      <div className={styles.footer}>
+        <Link href={"/"}>Facebook</Link>
+        <Link href={"/"}>Instagram</Link>
+        <Link href={"/"}>Dribble</Link>
+        <Link href={"/"}>LinkedIn</Link>
+      </div>
     </>
   );
 }

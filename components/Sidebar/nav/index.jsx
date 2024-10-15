@@ -65,6 +65,18 @@ export default function HomeNav() {
           })}
         </div>
         <Footer />
+        <span className="text-lg mt-72">
+          © {new Date().getFullYear()}{" "}
+          <a href="/" className="hover:underline text-green-500 ">
+            Green Factor{" "}
+          </a>
+        </span>
+        <span className="text-lg mb-96 gap-2">
+          Design & Developed by{" "}
+          <a href="/" className="hover:underline text-green-500 ">
+            CoderXpoint
+          </a>
+        </span>
       </div>
       <Curve />
     </motion.div>

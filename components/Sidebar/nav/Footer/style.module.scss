@@ -4,4 +4,10 @@
     justify-content: space-between;
     font-size: 12px;
     gap: 40px;
+    margin-top: 20rem;
+    
+    @media screen and (max-width: 600px) {
+        margin-top: 20rem; // Adjusted margin for phone screens
+    }
+
 }

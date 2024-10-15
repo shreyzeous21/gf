@@ -36,7 +36,10 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className="scrollbar-custom scroll-smooth overflow-y-scroll h-64 bg-gray-100">
+    <html
+      lang="en"
+      className="scrollbar-custom scroll-smooth overflow-y-scroll h-64 bg-gray-100"
+    >
       <head>
         <title>Green Factor</title>
         <link rel="shortcut icon" href="/Gf-logo.png" type="image/x-icon" />
@@ -57,7 +60,10 @@ export default function RootLayout({ children }) {
             <div className="hidden md:flex fixed right-4 top-1/2 transform -translate-y-1/2 cursor-pointer">
               {/* Scroll Down Button */}
               {!showScrollUp && (
-                <div className="flex flex-col items-center" onClick={scrollToBottom}>
+                <div
+                  className="flex flex-col items-center"
+                  onClick={scrollToBottom}
+                >
                   <div className="text-white py-2 px-4 transition-transform transform">
                     <h2 className="text-xs text-gray-500 font-semibold mx-10 transform rotate-90">
                       Scroll Down
@@ -74,7 +80,10 @@ export default function RootLayout({ children }) {
 
               {/* Scroll Up Button */}
               {showScrollUp && (
-                <div className="flex flex-col items-center" onClick={scrollToTop}>
+                <div
+                  className="flex flex-col items-center"
+                  onClick={scrollToTop}
+                >
                   <div className="text-white py-2 px-4 transition-transform transform">
                     <h2 className="text-xs text-gray-500 font-semibold mx-10 transform -rotate-90">
                       Scroll Up

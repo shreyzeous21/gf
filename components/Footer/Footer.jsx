@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const footerLinks = [
-  { name: "About", href: "/About" },
-  { name: "Work", href: "/Work" },
+  { name: "About Us", href: "/About" },
+  { name: "Our Work", href: "/Work" },
   { name: "Case Studies", href: "#/CaseStudies" },
   { name: "Careers", href: "Careers" },
-  { name: "Contact", href: "/Contact" },
+  { name: "Contact Us", href: "/Contact" },
 ];
 
 const socialMediaLinks = [
